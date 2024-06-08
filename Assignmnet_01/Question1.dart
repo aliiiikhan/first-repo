@@ -9,7 +9,6 @@ void main() {
     print("they are square values");
   } else {
     print("they are rectangle values");
-    print(length
-    );
+  
   }
 }
