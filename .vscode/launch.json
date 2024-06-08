@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
         {
             "name": "Launch Edge",
             "request": "launch",
@@ -49,6 +48,12 @@
             "name": "Dart & Flutter",
             "request": "launch",
             "type": "dart"
+        },
+        {
+            "name": "Dart (list1.dart)",
+            "type": "dart",
+            "request": "launch",
+            "program": "list1.dart"
         }
     ]
 }
