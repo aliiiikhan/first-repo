@@ -1,16 +1,15 @@
-double averageOfNegativeNumbers(List<int> numbers) {
-  int sum = 0;
-  int count = 0;
-  for (var number in numbers) {
+void main() {
+  List<int> numbers = [-3, -9, 1, -6, 4, 2, -8, 5, 7];
+  int negativeSum = 0;
+  int negativeCount = 0;
+
+  for (int number in numbers) {
     if (number < 0) {
-      sum += number;
-      count++;
+      negativeSum += number;
+      negativeCount++;
     }
   }
-  return count > 0 ? sum / count : 0.0;
-}
 
-void main() {
-  List<int> numbers = [-3, -9, 1, 6, -4, 2, -8, 5, -7];
-  print('Average of negative numbers: ${averageOfNegativeNumbers(numbers)}');
+  double average = negativeCount == 0 ? 0 : negativeSum / negativeCount;
+  print('Average of negative numbers: $average');
 }

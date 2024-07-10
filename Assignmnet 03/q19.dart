@@ -1,14 +1,10 @@
-int countVowels(String str) {
-  int count = 0;
-  for (var char in str.toLowerCase().split('')) {
-    if ('aeiou'.contains(char)) {
-      count++;
+void main() {
+  String str = "example";
+  int vowelCount = 0;
+  for (int i = 0; i < str.length; i++) {
+    if ("aeiouAEIOU".contains(str[i])) {
+      vowelCount++;
     }
   }
-  return count;
-}
-
-void main() {
-  String str = "Hello World";
-  print('Number of vowels: ${countVowels(str)}');
+  print('Number of vowels: $vowelCount');
 }

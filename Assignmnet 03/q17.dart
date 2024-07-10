@@ -1,29 +1,28 @@
-void userLogin(List<Map<String, String>> credentials, String email, String password) {
-  bool isAuthenticated = false;
-  while (!isAuthenticated) {
-    for (var credential in credentials) {
-      if (credential['email'] == email && credential['password'] == password) {
-        isAuthenticated = true;
-        break;
-      }
-    }
-    if (!isAuthenticated) {
-      print("Invalid credentials. Please try again.");
-      // Simulating input in the console for email and password
-      email = "user@example.com"; // This should be user input
-      password = "password123"; // This should be user input
-    }
-  }
-  print("User login successful.");
-}
+import 'dart:io';
 
 void main() {
   List<Map<String, String>> credentials = [
-    {'email': 'user1@example.com', 'password': 'password1'},
-    {'email': 'user2@example.com', 'password': 'password2'},
-    {'email': 'user@example.com', 'password': 'password123'},
+    {'email': 'user1@example.com', 'password': 'pass1'},
+    {'email': 'user2@example.com', 'password': 'pass2'},
+    {'email': 'user3@example.com', 'password': 'pass3'},
   ];
-  String email = "wrong@example.com";
-  String password = "wrongpassword";
-  userLogin(credentials, email, password);
+  bool loginSuccessful = false;
+
+  while (!loginSuccessful) {
+    print("Enter your email:");
+    String email = stdin.readLineSync()!;
+    print("Enter your password:");
+    String password = stdin.readLineSync()!;
+
+    for (var credential in credentials) {
+      if (email == credential['email'] && password == credential['password']) {
+        print("User login successful.");
+        loginSuccessful = true;
+        break;
+      }
+    }
+    if (!loginSuccessful) {
+      print("Incorrect email or password. Please try again.");
+    }
+  }
 }

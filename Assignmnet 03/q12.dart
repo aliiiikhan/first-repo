@@ -1,10 +1,6 @@
-void displayRepeatingNumberPattern(int n) {
+void main() {
+  int n = 4;
   for (int i = 1; i <= n; i++) {
     print('$i' * i);
   }
-}
-
-void main() {
-  int n = 4;
-  displayRepeatingNumberPattern(n);
 }

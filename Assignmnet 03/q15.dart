@@ -1,10 +1,10 @@
-void displayAsteriskPyramid(int n) {
-  for (int i = 1; i <= n; i++) {
-    print(' ' * (n - i) + '* ' * i);
-  }
-}
-
 void main() {
   int n = 4;
-  displayAsteriskPyramid(n);
+  for (int i = 1; i <= n; i++) {
+    String line = '';
+    for (int j = 1; j <= i; j++) {
+      line += '* ';
+    }
+    print(line);
+  }
 }

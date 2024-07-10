@@ -1,12 +1,8 @@
-void printNumbersGreaterThanFive(List<int> numbers) {
-  for (var number in numbers) {
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (int number in numbers) {
     if (number > 5) {
       print(number);
     }
   }
-}
-
-void main() {
-  List<int> numbers = [1, 2, 3, 6, 8, 5, 9, 10];
-  printNumbersGreaterThanFive(numbers);
 }

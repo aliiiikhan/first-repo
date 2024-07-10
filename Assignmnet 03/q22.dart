@@ -1,8 +1,19 @@
-void calculateGrades(List<Map<String, dynamic>> studentDetails) {
+void main() {
+  List<Map<String, dynamic>> studentDetails = [
+    {'name': 'Ali', 'marks': [80, 75, 90], 'section': 'A', 'rollNumber': 101},
+    {'name': 'Bilal', 'marks': [95, 92, 88], 'section': 'B', 'rollNumber': 102},
+    {'name': 'Aslam', 'marks': [70, 65, 75], 'section': 'A', 'rollNumber': 103},
+  ];
+
   for (var student in studentDetails) {
-    var marks = student['marks'] as List<int>;
-    var average = marks.reduce((a, b) => a + b) / marks.length;
+    List<int> marks = student['marks'];
+    int totalMarks = 0;
+    for (int mark in marks) {
+      totalMarks += mark;
+    }
+    double average = totalMarks / marks.length;
     String grade;
+
     if (average >= 90) {
       grade = 'A';
     } else if (average >= 80) {
@@ -14,15 +25,7 @@ void calculateGrades(List<Map<String, dynamic>> studentDetails) {
     } else {
       grade = 'F';
     }
-    print('${student['name']} has a grade of $grade');
-  }
-}
 
-void main() {
-  List<Map<String, dynamic>> studentDetails = [
-    {'name': 'John', 'marks': [80, 75, 90], 'section': 'A', 'rollNumber': 101},
-    {'name': 'Emma', 'marks': [95, 92, 88], 'section': 'B', 'rollNumber': 102},
-    {'name': 'Ryan', 'marks': [70, 65, 75], 'section': 'A', 'rollNumber': 103},
-  ];
-  calculateGrades(studentDetails);
+    print('${student['name']}\'s grade: $grade');
+  }
 }
